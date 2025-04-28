@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anket Yönlendirme</title>
+    <title>MGMT-203 Uni-Rent</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -59,10 +59,48 @@
 </head>
 <body>
     <div class="container">
-        <h1>Ankete Hoş Geldiniz</h1>
-        <p>Araştırmamıza katıldığınız için teşekkür ederiz.</p>
+        <h1>Thank you for participating in our survey.</h1>
+        <pre>Important Notice:
+ This survey is conducted as part of a course project for MGMT203: Introduction to Data Analysis and Research in Business at Sabancı University.
+ The purpose of the survey is to gather feedback for a startup idea and is intended solely for academic purposes.
+ Your responses will remain confidential and will be used only for project analysis within the course.
+Participation in this survey is entirely voluntary.
+ By continuing, you acknowledge that you have read this notice and agree to participate voluntarily.
+ You may withdraw at any time without any consequences.
+Please read carefully before starting the survey. It will only take 2–3 minutes to complete.
+
+Welcome to the UniRent!
+UniRent is a newly developed mobile platform that aims to bring you rental experience for university students and landlords in Turkey.
+Our goal is to create a safe, transparent, and efficient rental environment tailored specifically for the needs of students and property owners.
+
+For students, UniRent offers:
+
+Verified rental listings to minimize scams and hidden costs,
+Transparent & fixed pricing to avoid unexpected charges,
+Roommate matching tools based on lifestyle preferences,
+A student-only community, where only verified university students can rent and communicate.
+
+For landlords, UniRent provides:
+Affordable listing options without the need for expensive agency commissions,
+Access to a verified pool of student tenants,
+Promotion and analytics features to help rent out properties faster,
+The ability to set custom rental rules (e.g., no pets, minimum stay periods) directly on the platform.
+
+In this survey, you will be asked to imagine yourself in one of two roles:
+
+As a landlord offering a property for rent,
+
+Or as a student searching for housing.
+
+Your responses will help us better understand the preferences, needs, and expectations of our future users.
+Please answer honestly based on how you would feel about using such a platform.
+Thank you for your time and valuable feedback!
+</pre>
+
+        
+        
         <p>Butona tıkladıktan sonra rastgele bir ankete yönlendirileceksiniz.</p>
-        <button class="button" onclick="redirectToRandomSurvey()">Ankete Başla</button>
+        <button class="button" onclick="redirectToRandomSurvey()">Start Survey</button>
         <div id="loader" class="loader" style="display: none;"></div>
         <p id="redirect-message" style="display: none;">Yönlendiriliyor...</p>
     </div>
@@ -74,9 +112,9 @@
             document.getElementById('redirect-message').style.display = 'block';
             document.querySelector('.button').style.display = 'none';
             
-            // İki anket URL'si (buraya kendi anket URL'lerinizi ekleyin)
-            const survey1 = "https://docs.google.com/forms/d/e/1FAIpQLSeGfXViZlcJeH5x75e58pfwNOiS4bILcsRgszWYnnHkoN9OcQ/viewform?usp=sf_link";
-            const survey2 = "https://docs.google.com/forms/d/e/1FAIpQLSfBcpzuyJuQIkHN7ryGtYccg_mO6gjvKqVdY52ajw5-mQFW-A/viewform?usp=sf_link";
+            // Iki anket URL'si BURYAI DEGISTIR
+            const survey1 = "https://docs.google.com/forms/d/e/1FAIpQLSfmHWL1e2vuaDKPVExTVFH2z4BpBM_LiVOIrQ9QvA26g1_7Yg/viewform?usp=dialog";
+            const survey2 = "";
             
             // Rastgele sayı oluştur (0 veya 1)
             const random = Math.random();
