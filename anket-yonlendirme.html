@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anket Yönlendirme</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin: 1rem 0;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ankete Hoş Geldiniz</h1>
+        <p>Araştırmamıza katıldığınız için teşekkür ederiz.</p>
+        <p>Butona tıkladıktan sonra rastgele bir ankete yönlendirileceksiniz.</p>
+        <button class="button" onclick="redirectToRandomSurvey()">Ankete Başla</button>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <p id="redirect-message" style="display: none;">Yönlendiriliyor...</p>
+    </div>
+
+    <script>
+        function redirectToRandomSurvey() {
+            // Kullanıcı arayüzünü güncelle
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('redirect-message').style.display = 'block';
+            document.querySelector('.button').style.display = 'none';
+            
+            // İki anket URL'si (buraya kendi anket URL'lerinizi ekleyin)
+            const survey1 = "https://docs.google.com/forms/d/e/1FAIpQLSdExampleURL1/viewform";
+            const survey2 = "https://docs.google.com/forms/d/e/1FAIpQLSdExampleURL2/viewform";
+            
+            // Rastgele sayı oluştur (0 veya 1)
+            const random = Math.random();
+            
+            // %50 olasılıkla birinci veya ikinci ankete yönlendir
+            setTimeout(function() {
+                if (random < 0.5) {
+                    window.location.href = survey1;
+                } else {
+                    window.location.href = survey2;
+                }
+            }, 1500); // 1.5 saniye bekletme
+        }
+    </script>
+</body>
+</html>
